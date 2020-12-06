@@ -42,7 +42,7 @@ add_player_parser.add_argument(
 add_player_parser.add_argument(
     name='date_of_birth',
     required=True,
-    type=str, # TODO add validator date of birth
+    type=str,
     default='2017-11-28'
 )
 add_player_parser.add_argument(
@@ -253,7 +253,6 @@ class Players(Resource):
                 for player in all_players:
                     if new_player == player:
                         return {
-                                   'success': False,
                                    'message': 'Input payload validation failed',
                                    'errors': {
                                        'last_name': 'Player already in a some team',
@@ -279,7 +278,6 @@ class Players(Resource):
                 for taken_number in all_taken_numbers:
                     if taken_number[0] == input_data['number']:
                         return {
-                                   'success': False,
                                    'message': 'Input payload validation failed',
                                    'errors': {
                                        'position': "The player's number is occupied"
