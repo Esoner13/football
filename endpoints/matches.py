@@ -1,4 +1,3 @@
-import json
 from contextlib import closing
 
 import psycopg2
@@ -7,7 +6,7 @@ from flask_restplus import Namespace, Resource
 from psycopg2 import extras as extras
 
 from restplus import api
-from utilities import response_case, get_json_from_psql, CONNECT_CONF
+from utilities import response_case, get_json_from_psql, CONNECT_CONF, find_id
 
 
 matches_ns = Namespace('Matches', description='matches endpoints')

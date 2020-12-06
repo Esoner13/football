@@ -1,5 +1,4 @@
 import datetime
-import json
 from contextlib import closing
 
 import psycopg2
